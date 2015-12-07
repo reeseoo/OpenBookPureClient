@@ -1,1 +1,1 @@
-﻿var openBookApp = angular.module('OpenBook', ['ngRoute'], ['ngMaterial']);
+﻿var openBookApp = angular.module('OpenBook', ['ngRoute']);
