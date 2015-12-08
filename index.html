@@ -1,18 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css">
+
+    <link rel="stylesheet" href="../lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="../css/site.css" />
+    <link rel="stylesheet" href="../css/hoverstory.css" />
+</head>
+
+<body ng-app="OpenBook">
+    <div class="container body-content">
+
+        <div ng-controller="homeCtrl" ng-cloak>
+            <div ng-include="'/layout/navbar.html'"></div>
+            <div ng-view></div>
+        </div>
+
+        <hr />
+        <footer>
+            <p>&copy; 2015 - OpenBook</p>
+        </footer>
+    </div>
+    
     <script src="../lib/jquery/dist/jquery.js"></script>
     <script src="../js/angular.min.js"></script>
     <script src="../js/angular-route.js"></script>
-    
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css">
-    
     <script src="/bower_components/angular/angular.js"></script>
     <script src="/bower_components/angular-aria/angular-aria.js"></script>
     <script src="/bower_components/angular-animate/angular-animate.js"></script>
     <script src="/bower_components/angular-material/angular-material.js"></script>
-    
     <script src="../js/site.js"></script>
     <script src="../layout/home.ctrl.js"></script>
     <script src="../js/story.ctrl.js"></script>
@@ -22,27 +40,5 @@
     <script src="../lib/bootstrap/dist/js/bootstrap.js"></script>
     <script src="../lib/hammer.js/hammer.js"></script>
     
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <link rel="stylesheet" href="../lib/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="../css/site.css" />
-    <link rel="stylesheet" href="../css/hoverstory.css" />
-
-</head>
-<body ng-app="OpenBook">
-    <div class="container body-content">
-        
-        <div ng-controller="homeCtrl" ng-cloak>
-    <div ng-include="'/layout/navbar.html'"></div>
-    <div ng-view></div>
-        </div>
-        
-        <hr />
-        <footer>
-            <p>&copy; 2015 - OpenBook</p>
-        </footer>
-    </div>
-
 </body>
 </html>
