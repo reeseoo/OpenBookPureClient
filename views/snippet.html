@@ -1,23 +1,22 @@
 ﻿<div ng-controller="snippetCtrl" class="container">
 
     <div ng-repeat="snippet in snippets" class="row">
-        <span style="margin-left: 50px;" ng-attr-data-author="{{snippet.Author}}" class="tooltip-left" data-id="ff3881ce-47f8-412b-8f63-7f18c8e871e9" ng-attr-data-tooltip="{{snippet.Author}}">{{snippet.Content}}</span>
+        <span style="margin-left: 50px;" ng-attr-data-author="{{snippet.Author}}" class="tooltip-left" data-id="ff3881ce-47f8-412b-8f63-7f18c8e871e9"
+        ng-attr-data-tooltip="{{snippet.Author}}">{{snippet.Content}}</span>
     </div>
 
-    <div class="container">
-        <form ng-submit="submit()" style="padding-top: 20px">
-            <div class="form-group">
-                <label>Snippet Content</label>
-                <input type="text" id="contentText" class="form-control" ng-model="snippetContent" />
-            </div>
-            <div class="form-group">
-                <label>Snippet Author</label>
-                <input type="text" id="authorText" class="form-control" ng-model="snippetAuthor" />
-            </div>
-            
-        </form>
-        
-    </div>
-    
-    <md-button class="md-raised md-primary" itemtype="submit">Submit</md-button>
+    <form name="userForm" ng-submit="submit()">
+
+        <md-input-container>
+            <label>Author</label>
+            <input ng-model="snippetAuthor">
+        </md-input-container>
+
+        <md-input-container class="md-block">
+            <label>Content</label>
+            <textarea ng-model="snippetContent" columns="1" md-maxlength="150" rows="5"></textarea>
+        </md-input-container>
+
+        <md-button class="md-raised md-primary" itemtype="submit">Submit</md-button>
+    </form>
 </div>
