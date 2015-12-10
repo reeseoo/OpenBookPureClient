@@ -9,7 +9,7 @@
     $scope.showSnippet = false;
     
     $scope.showDiv = function(){
-        $scope.showSnippet = true;
+        $scope.showSnippet = !$scope.showSnippet;
     }
 
     $http.get('http://openbookapi.azurewebsites.net/api/snippet').success(function (data, status, headers, config) {
