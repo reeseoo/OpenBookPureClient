@@ -5,6 +5,12 @@
 
     vm.snippetContent = '';
     vm.snippetAuthor = '';
+    
+    $scope.showSnippet = false;
+    
+    $scope.showDiv = function(){
+        $scope.showSnippet = true;
+    }
 
     $http.get('http://openbookapi.azurewebsites.net/api/snippet').success(function (data, status, headers, config) {
         alert("successsssss");
