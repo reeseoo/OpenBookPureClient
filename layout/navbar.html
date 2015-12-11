@@ -4,5 +4,7 @@
           <span>OpenBook</span>
         </h2>
         <span flex></span>
+        <span ng-if="auth.isAuthenticated">{{auth.profile.nickname}}</span>
+        <a ng-if="!auth.isAuthenticated" href="index.html#/login">Login</a>
     </div>
 </md-toolbar>

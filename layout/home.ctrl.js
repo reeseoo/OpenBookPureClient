@@ -1,3 +1,3 @@
-﻿angular.module('OpenBook').controller("homeCtrl", function ($scope, $http) {
-
+﻿openBookApp.controller("homeCtrl", function ($scope, $http, auth) {
+$scope.auth = auth;
 });
