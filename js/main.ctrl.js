@@ -21,7 +21,6 @@
             'SnippetContent': $scope.snippetContent,
             'SnippetAuthor': $scope.snippetAuthor
         }
-
         $http.post('http://openbookapi.azurewebsites.net/api/snippet', snippet, {
         }).success(function (data, status, headers, config) {
             alert("Snippet added successfully");
