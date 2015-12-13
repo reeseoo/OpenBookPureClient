@@ -10,10 +10,10 @@ openBookApp.config(function (authProvider) {
 
 function routing($routeProvider) {
   $routeProvider
-    .when('/', {
+    .when('/home', {
       templateUrl: '/app/home/home.html',
       controller: 'homeCtrl'
-    }).otherwise({redirectTo : '/'})
+    }).otherwise({redirectTo : '/home'})
 };
 
 function authConfig(authProvider, jwtInterceptorProvider, $httpProvider) {
@@ -38,7 +38,7 @@ function authRun(auth, $rootScope, $location, store, jwtHelper) {
         }
       } else {
         // Either show the login page or use the refresh token to get a new idToken
-        $location.path('/');
+        $location.path('/home');
       }
     }
   });
