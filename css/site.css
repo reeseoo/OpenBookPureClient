@@ -1,5 +1,4 @@
 ﻿body {
-    padding-bottom: 20px;
 }
 
 /* Wrapping element */
@@ -30,4 +29,23 @@ textarea {
     .carousel-caption {
         z-index: 10 !important;
     }
+}
+.openbook-sidebar-toolbar{
+    text-align: center;
+}
+.openbook-sidebar-toolbar img{
+    width:128px;
+}
+.openbook-navbar{
+        background: #f6f6f6;
+        color:rgb(63,81,181);
+}
+footer{
+    z-index: 61;
+    text-align: center;
+    background: #fff;
+}
+footer hr{
+    margin-top: 0;
+    
 }

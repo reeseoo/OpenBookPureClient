@@ -5,26 +5,22 @@
     </div>
 
     <md-button class="md-fab" aria-label="Snippet" ng-click="showDiv()">
-        <md-icon md-svg-src="img/icons/note-plus.svg" ></md-icon>
+        <md-icon md-svg-src="/img/icons/note-plus.svg" ></md-icon>
     </md-button>
 
     <div id="addSnippet" ng-show="showSnippet">
         <md-content layout-padding>
             <form name="userForm" ng-submit="submit()">
-
                 <md-input-container>
                     <label>Author</label>
                     <input ng-model="snippetAuthor" flex="100">
                 </md-input-container>
-
                 <md-input-container class="md-block">
                     <label>Content</label>
                     <textarea ng-model="snippetContent" columns="3" md-maxlength="500" rows="5" flex="100"></textarea>
                 </md-input-container>
-
                 <md-button class="md-raised md-primary" itemtype="submit">Submit</md-button>
             </form>
         </md-content>
     </div>
-
 </div>

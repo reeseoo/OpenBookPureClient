@@ -8,12 +8,16 @@ openBookApp.config(function (authProvider) {
   .run(authRun)
 
 
-function routing($routeProvider) {
-  $routeProvider
-    .when('/home', {
-      templateUrl: '/app/home/home.html',
-      controller: 'homeCtrl'
-    }).otherwise({redirectTo : '/home'})
+function routing($stateProvider, $urlRouterProvider) {
+  $stateProvider
+            .state('home', {
+                url: '/home',
+                templateUrl: '/App/Home/home.html',
+                controller: 'homeCtrl',
+                controllerAs: 'vm',   
+                reloadOnSearch: false
+            })
+    $urlRouterProvider.otherwise("/home")
 };
 
 function authConfig(authProvider, jwtInterceptorProvider, $httpProvider) {

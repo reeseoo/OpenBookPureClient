@@ -1,8 +1,5 @@
-﻿<md-toolbar>
-    <div class="md-toolbar-tools">
-        <h2>
-          <span>OpenBook</span>
-        </h2>
+﻿<md-toolbar class="md-whiteframe-z2">
+    <div class="md-toolbar-tools openbook-navbar">
         <span flex></span>
         <span ng-if="auth.isAuthenticated" ng-click="logout()">Logout {{auth.profile.nickname}}</span>
         <span ng-if="!auth.isAuthenticated" ng-click="login()">Login</span>

@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="../css/hoverstory.css" />
 </head>
 
-<body ng-app="OpenBook">
-    <div data-ng-include="'/app/layout/layout.html'"></div>
+<body ng-app="OpenBook" layout="column">
+    <div flex layout="column" data-ng-include="'/app/layout/layout.html'"></div>
     <script src="/bower_components/angular/angular.min.js"></script>
     <script src="/bower_components/angular-route/angular-route.min.js"></script>
     <script src="/bower_components/angular-jwt/dist/angular-jwt.min.js"></script>
@@ -21,6 +21,7 @@
     <script src="/bower_components/angular-aria/angular-aria.js"></script>
     <script src="/bower_components/angular-animate/angular-animate.js"></script>
     <script src="/bower_components/angular-material/angular-material.js"></script>
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="/app/app.module.js"></script>
     <script src="/app/app.config.js"></script>
     <script src="/app/home/home.ctrl.js"></script>
