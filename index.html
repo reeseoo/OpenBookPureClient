@@ -4,13 +4,41 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css">
-
     <link rel="stylesheet" href="../css/site.css" />
     <link rel="stylesheet" href="../css/hoverstory.css" />
 </head>
 
 <body ng-app="OpenBook" layout="column">
-    <div flex layout="column" data-ng-include="'/app/layout/layout.html'"></div>
+     <section flex layout="row" ng-controller="layoutCtrl" ng-cloak> 
+        <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+            <md-toolbar class="openbook-sidebar-toolbar">
+                <span><img src="/img/icons/ic_import_contacts_white_24px.svg"/></span>
+                <h2>
+                    <span>OpenBook</span>
+                </h2>
+            </md-toolbar>
+            <md-content layout-padding>
+                <md-list>
+                    <md-list-item href="/index.html#/home" ng-click="navigate()">
+                        <md-icon md-svg-icon="img/icons/ic_menu_black_24px.svg"></md-icon>
+                        <p>Story so far</p>
+                    </md-list-item>
+                </md-list>
+            </md-content>
+        </md-sidenav>
+        <section layout="column" flex>
+                <div ng-include="'/app/layout/navbar.html'"></div>
+                <md-content flex layout-padding>
+                    <div ui-view></div>
+                </md-content>    
+        </section>
+    </section>
+    <footer >
+        <hr />
+        <p>&copy; 2015 - OpenBook</p>
+    </footer>
+    
+    
     <script src="/bower_components/angular/angular.min.js"></script>
     <script src="/bower_components/angular-route/angular-route.min.js"></script>
     <script src="/bower_components/angular-jwt/dist/angular-jwt.min.js"></script>
