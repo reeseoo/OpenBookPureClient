@@ -1,7 +1,15 @@
-﻿openBookApp.controller("layoutCtrl", function ($scope, $http, auth, store) {
+﻿openBookApp.controller("layoutCtrl", function ($scope, $http, auth, store,$mdSidenav) {
       $scope.auth = auth;
       $scope.logout = logout;
       $scope.login = login;
+      $scope.toggleNav = toggleNav;
+      
+      function toggleNav() {
+            $mdSidenav("left")
+                .toggle()
+                .then(function () {         
+                });
+      }
       
       function logout() {
             auth.signout();
