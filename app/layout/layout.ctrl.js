@@ -3,7 +3,7 @@
       $scope.logout = logout;
       $scope.login = login;
       $scope.toggleNav = toggleNav;
-      
+      $scope.navigate = navigate;
       function toggleNav() {
             $mdSidenav("left")
                 .toggle()
@@ -15,6 +15,9 @@
             auth.signout();
             store.remove('profile');
             store.remove('token');
+      }
+      function navigate(location){
+          window.location = "/index.html#/"+location;
       }
 
       function login() {

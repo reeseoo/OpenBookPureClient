@@ -1,8 +1,4 @@
-﻿<div class="wrapper" layout="row">
-	<div class="centre" flex>
-		<div ng-include="'/app/story/story.html'"></div>
-		<div ng-include="'/app/snippet/snippet.html'"></div>
-
-		
-	</div>
+﻿<div flex class="wrapper" layout="column">
+    <div ng-include="'/app/story/story.html'"></div>
+    <div flex layout="column" ng-include="'/app/snippet/snippet.html'"></div>
 </div>

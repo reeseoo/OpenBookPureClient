@@ -2,11 +2,8 @@ div#story{
   margin-top: 50px;
   margin-left:250px;
 }
-span:hover{
+div#story span:hover{
   text-decoration:underline;
-}
-span[data-new-line="true"]::before { 
-  content: '\A'; 
 }
 
 

@@ -19,17 +19,21 @@
             </md-toolbar>
             <md-content layout-padding>
                 <md-list>
-                    <md-list-item href="/index.html#/home" ng-click="navigate()">
+                    <md-list-item ng-click="navigate('home')">
                         <md-icon md-svg-icon="img/icons/ic_menu_black_24px.svg"></md-icon>
                         <p>Story so far</p>
+                    </md-list-item>
+                    <md-list-item ng-click="navigate('my-snippets')">
+                        <md-icon md-svg-icon="img/icons/ic_menu_black_24px.svg"></md-icon>
+                        <p>My Snippets</p>
                     </md-list-item>
                 </md-list>
             </md-content>
         </md-sidenav>
         <section layout="column" flex>
                 <div ng-include="'/app/layout/navbar.html'"></div>
-                <md-content flex layout-padding>
-                    <div ui-view></div>
+                <md-content ui-view flex layout-padding layout="column">
+                    
                 </md-content>    
         </section>
     </section>
