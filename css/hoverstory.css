@@ -2,12 +2,9 @@ div#story{
   margin-top: 50px;
   margin-left:250px;
 }
-div#story span:hover{
+div#snippets span:hover{
   text-decoration:underline;
 }
-
-
-
 html {
   box-sizing: border-box;
 }
