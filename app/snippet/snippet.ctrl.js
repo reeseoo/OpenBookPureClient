@@ -1,4 +1,4 @@
-﻿angular.module('OpenBook').controller("snippetCtrl", function ($scope, $http) {
+﻿angular.module('OpenBook').controller("snippetCtrl", function ($scope, $http,auth,store) {
     var vm = this;
 
     vm.title = 'OpenBook';
@@ -9,7 +9,17 @@
     $scope.showSnippet = false;
     
     $scope.showDiv = function(){
-        $scope.showSnippet = $scope.showSnippet ? false : true;
+        if(auth.isAuthenticated)
+            $scope.showSnippet = $scope.showSnippet ? false : true;
+        else{
+            auth.signin({}, function (profile, token) {
+                  // Success callback
+                  store.set('profile', profile);
+                  store.set('token', token);
+            }, function () {
+                  // Error callback
+            });
+        }
     }
 
     $http.get('http://openbookapi.azurewebsites.net/api/snippet').success(function (data, status, headers, config) {
