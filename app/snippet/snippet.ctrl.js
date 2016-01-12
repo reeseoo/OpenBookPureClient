@@ -1,4 +1,6 @@
 ﻿angular.module('OpenBook').controller("snippetCtrl", function ($scope, $http,auth,store) {
+    $scope.snippetMaxLength = 500;
+    $scope.snippetMinLength = 8;
     
     
     $scope.showDiv = function(){

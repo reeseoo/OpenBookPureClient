@@ -16,7 +16,12 @@
                     <md-content layout-padding>
                         <md-input-container class="md-block">
                             <label>Content</label>
-                            <textarea ng-model="snippetContent" columns="3" md-maxlength="500" rows="5" flex="100"></textarea>
+                            <textarea ng-model="snippetContent" name="content" columns="3" ng-minlength="snippetMinLength" ng-maxlength="snippetMaxLength" md-maxlength="snippetMaxLength" required rows="5" flex="100"></textarea>
+                            <div ng-messages="userForm.content.$error" style="color:maroon" role="alert">
+                                <div ng-message="required">You did not enter any content</div>
+                                <div ng-message="minlength">Your content is too short</div>
+                                <div ng-message="maxlength">Your content is too long</div>
+                            </div>
                         </md-input-container>
                         <md-input-container>
                             <md-checkbox
@@ -32,9 +37,7 @@
                     <md-button class="md-fab" ng-click="showDiv()" ng-show="showSnippet">
                         <md-icon md-svg-src="/img/icons/ic_close_white_24px.svg"></md-icon>
                     </md-button> <span flex></span>
-                    
-                    <!--<md-button class="md-fab" itemtype="submit" ng-show="showSnippet" ng-disabled="!formValid">-->
-                        <md-button class="md-fab" itemtype="submit" ng-show="showSnippet" >
+                        <md-button class="md-fab" itemtype="submit" ng-show="showSnippet" ng-disabled="userForm.$invalid">
                         <md-icon md-svg-src="/img/icons/ic_done_white_24px.svg" ></md-icon>
                     </md-button>
                     <md-button class="md-fab" aria-label="Snippet" ng-click="showDiv()" ng-hide="showSnippet">
