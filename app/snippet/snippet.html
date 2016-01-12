@@ -34,15 +34,15 @@
                 </div>
                 <span flex ng-show="!showSnippet"></span>
                 <div layout="column">
-                    <md-button class="md-fab" ng-click="showDiv()" ng-show="showSnippet">
-                        <md-icon md-svg-src="/img/icons/ic_close_white_24px.svg"></md-icon>
-                    </md-button> <span flex></span>
-                        <md-button class="md-fab" itemtype="submit" ng-show="showSnippet" ng-disabled="userForm.$invalid">
+                    <md-button class="md-fab" aria-label="Snippet" ng-click="showDiv()">
+                        <md-icon ng-hide="showSnippet" md-svg-src="/img/icons/note-plus.svg" ></md-icon>
+                        <md-icon ng-show="showSnippet" md-svg-src="/img/icons/ic_close_white_24px.svg"></md-icon>
+                    </md-button>
+                    <span flex></span>
+                    <md-button class="md-fab" itemtype="submit" ng-show="showSnippet" ng-disabled="userForm.$invalid">
                         <md-icon md-svg-src="/img/icons/ic_done_white_24px.svg" ></md-icon>
                     </md-button>
-                    <md-button class="md-fab" aria-label="Snippet" ng-click="showDiv()" ng-hide="showSnippet">
-                        <md-icon md-svg-src="/img/icons/note-plus.svg" ></md-icon>
-                    </md-button>
+                    
                 </div>
             </form>
         </div>
