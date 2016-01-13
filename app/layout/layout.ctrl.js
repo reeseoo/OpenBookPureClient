@@ -21,12 +21,17 @@
       }
 
       function login() {
-            auth.signin({}, function (profile, token) {
-                  // Success callback
-                  store.set('profile', profile);
-                  store.set('token', token);
-            }, function () {
-                  // Error callback
-            });
+            auth.signin({authParams: {
+                scope: 'openid profile'
+            }
+        }, 
+        function (profile, token,token2,another) {
+            // Success callback
+            store.set('profile', profile);
+            store.set('token', token);
+        }, 
+        function () {
+            // Error callback
+        });
       }
 });

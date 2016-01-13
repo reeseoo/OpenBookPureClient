@@ -1,20 +1,9 @@
-(function () {
-    'use strict';
-    angular.module('OpenBook').factory('reqInterceptor', reqInterceptor)
+angular.module('OpenBook').config(function ($httpProvider, jwtInterceptorProvider) {
+    // We're annotating this function so that the `store` is injected correctly when this file is minified
+    jwtInterceptorProvider.tokenGetter = function(store) {
+        // Return the saved token
+        return store.get('token');
+    };
 
-    function reqInterceptor($rootScope,store) {
-        
-        return {
-            request: function (config) {
-                var token = store.get('token');
-                if(token)
-                    config.headers.Authorization = 'Bearer ' + token;
-                return config;
-            }
-        }
-    }
-    angular.module('OpenBook').config(['$httpProvider', function($httpProvider) {  
-        $httpProvider.interceptors.push('reqInterceptor');
-    }]);
-
-})();
+    $httpProvider.interceptors.push('jwtInterceptor');
+});
