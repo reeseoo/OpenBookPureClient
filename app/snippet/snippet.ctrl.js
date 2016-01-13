@@ -8,12 +8,17 @@
             $scope.showSnippet = $scope.showSnippet ? false : true;
         else
         {
-            auth.signin({}, function (profile, token) {
-                  // Success callback
-                  store.set('profile', profile);
-                  store.set('token', token);
-            }, function () {
-                  console.log('Login Error');
+            auth.signin({authParams: {
+                    scope: 'openid profile'
+                }
+            }, 
+            function (profile, token,token2,another) {
+                // Success callback
+                store.set('profile', profile);
+                store.set('token', token);
+            }, 
+            function () {
+                // Error callback
             });
             $scope.$apply();
         }

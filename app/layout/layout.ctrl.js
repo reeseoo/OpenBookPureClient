@@ -22,16 +22,16 @@
 
       function login() {
             auth.signin({authParams: {
-                scope: 'openid profile'
-            }
-        }, 
-        function (profile, token,token2,another) {
-            // Success callback
-            store.set('profile', profile);
-            store.set('token', token);
-        }, 
-        function () {
-            // Error callback
-        });
+                    scope: 'openid profile'
+                }
+            }, 
+            function (profile, token,token2,another) {
+                // Success callback
+                store.set('profile', profile);
+                store.set('token', token);
+            }, 
+            function () {
+                // Error callback
+            });
       }
 });
