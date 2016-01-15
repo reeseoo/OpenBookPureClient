@@ -23,6 +23,7 @@
                 // Success callback
                 store.set('profile', profile);
                 store.set('token', token);
+                $scope.showSnippet = $scope.showSnippet ? false : true;
             }, 
             function () {
                 // Error callback
