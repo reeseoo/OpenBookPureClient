@@ -58,7 +58,12 @@ footer hr{
     margin-left: -16px;
     padding-top: 18px;
 }
-
+#story,#add-snippet{
+    margin:8px;
+}
+#snippets{
+    overflow-y: none;
+}
 .layout-padding{
     padding:17px;
 }

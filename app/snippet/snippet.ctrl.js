@@ -1,9 +1,16 @@
 ﻿angular.module('OpenBook').controller("snippetCtrl", function ($scope, $http,auth,store,snippetService) {
+    /* Define Scope */
     $scope.snippetMaxLength = 500;
     $scope.snippetMinLength = 8;
+    $scope.getSnippets = getSnippets;
+    $scope.showDiv = showDiv;
+    $scope.submit = submit;
     
+    /* Init */
+    getSnippets();
     
-    $scope.showDiv = function(){
+    /* Function Defs */
+    function showDiv(){
         if(auth.isAuthenticated)
             $scope.showSnippet = $scope.showSnippet ? false : true;
         else
@@ -23,14 +30,18 @@
             $scope.$apply();
         }
     }
+    
+    function getSnippets(){
+        
+        snippetService.getSnippets().success(function (data, status, headers, config) {
+            $scope.snippets = data;
+        }).error(function (data, status, headers, config) {
+            alert("Unable to get snippets");
+        });
+    }
+    
 
-    snippetService.getSnippets().success(function (data, status, headers, config) {
-        $scope.snippets = data;
-    }).error(function (data, status, headers, config) {
-        alert("Unable to get snippets");
-    });
-
-    $scope.submit = function () {
+    function submit() {
         var snippet = {
             'Content': $scope.snippetContent,
             'NewParagraph': $scope.newParagraph
@@ -38,6 +49,11 @@
 
         snippetService.createSnippet(snippet).success(function (data, status, headers, config) {
             console.log("Snippet Saved");
+             $scope.snippets = [];
+            $scope.snippetContent = '';
+            $scope.newParagraph = false;
+            $scope.showSnippet = false;
+            $scope.getSnippets();
         }).error(function (data, status, headers, config) {
             alert("Error");
         });
