@@ -11,8 +11,8 @@
             </span>
         </div>
         <!-- this is gonna be the bit where you vote on snippets -->
-        <div hidden  id="snippets" flex>
-            <md-card class="md-whiteframe-z2" ng-repeat="snippet in snippets" >
+        <div id="snippets" layout="row" style="overflow:auto;">
+            <md-card class="md-whiteframe-z2" flex="50" ng-repeat="snippet in snippets" >
                 <md-card-content>
                     <p>{{snippet.Content}}</p>
                 </md-card-content>

@@ -8,6 +8,7 @@
     
     /* Init */
     getSnippets();
+    //TODO get storySofar vm from story provider
     
     /* Function Defs */
     function showDiv(){

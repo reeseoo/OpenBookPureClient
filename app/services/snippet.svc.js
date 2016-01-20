@@ -17,7 +17,14 @@ function SnippetService($http, APIURL) {
     {
         return $http.get(getApiUrl());
     }
-    
+    function getSnippetsForSubmissionPeriod(id)
+    {
+        return $http.get(APIURL+'submissionPeriod/'+id+'/snippets');
+    }
+    function getChosenSnippetsForStory(id)
+    {
+        return $http.get(APIURL+'story/'+id+'/chosensnippets');
+    }
     function getSnippet(id)
     {
         return $http.get(getApiUrl()+'/'+id);
