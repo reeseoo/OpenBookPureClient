@@ -6,6 +6,8 @@ function SnippetService($http, APIURL) {
     return{
         getSnippets:getSnippets,
         getSnippet:getSnippet,
+        getChosenSnippetsForStory:getChosenSnippetsForStory,
+        getSnippetsForSubmissionPeriod:getSnippetsForSubmissionPeriod,
         deleteSnippet:deleteSnippet,
         createSnippet:createSnippet,
     }
@@ -19,7 +21,7 @@ function SnippetService($http, APIURL) {
     }
     function getSnippetsForSubmissionPeriod(id)
     {
-        return $http.get(APIURL+'submissionPeriod/'+id+'/snippets');
+        return $http.get(APIURL+'submissionPeriod/'+id+'/snippet');
     }
     function getChosenSnippetsForStory(id)
     {

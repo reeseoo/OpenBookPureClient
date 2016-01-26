@@ -1,4 +1,4 @@
-﻿angular.module('OpenBook').controller("snippetCtrl", function ($scope, $http,auth,store,snippetService) {
+﻿angular.module('OpenBook').controller("snippetCtrl", function ($scope, $http,auth,store,snippetService,storyService,submissionPeriodService) {
     /* Define Scope */
     $scope.snippetMaxLength = 500;
     $scope.snippetMinLength = 8;
@@ -8,7 +8,6 @@
     
     /* Init */
     getSnippets();
-    //TODO get storySofar vm from story provider
     
     /* Function Defs */
     function showDiv(){
@@ -34,12 +33,26 @@
     }
     
     function getSnippets(){
-        
-        snippetService.getSnippets().success(function (data, status, headers, config) {
+        storyService.getLatestStory().success(function(data){
+        $scope.story = data;
+        snippetService.getChosenSnippetsForStory(data.Id).success(function(data){
             $scope.snippets = data;
         }).error(function (data, status, headers, config) {
             alert("Unable to get snippets");
         });
+        submissionPeriodService.getCurrentSubmissionPeriod(data.Id).success(function(data){
+            $scope.submission = data;
+            snippetService.getSnippetsForSubmissionPeriod(data.Id).success(function(data){
+                $scope.subittedSnippets = data;
+            }).error(function(error){
+                alert("Unable to get submitted snippets");
+            });
+        }).error(function(error){
+            alert("Unable to get current submission");
+        });
+    }).error(function(error){
+        alert("Unable to get story");
+    });
     }
     
 
