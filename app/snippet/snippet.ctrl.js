@@ -59,7 +59,9 @@
     function submit() {
         var snippet = {
             'Content': $scope.snippetContent,
-            'NewParagraph': $scope.newParagraph
+            'NewParagraph': $scope.newParagraph,
+            'SubmissionPeriodId':$scope.submission.Id,
+            'StoryId':$scope.story.Id
         }
 
         snippetService.createSnippet(snippet).success(function (data, status, headers, config) {
