@@ -42,7 +42,7 @@ function authRun(auth, $rootScope, $location, store, jwtHelper) {
         }
       } else {
         // Either show the login page or use the refresh token to get a new idToken
-        store.get('token');
+        store.remove('token');
         $location.path('/home');
       }
     }
