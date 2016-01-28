@@ -12,7 +12,7 @@ function routing($stateProvider, $urlRouterProvider) {
   $stateProvider
             .state('home', {
                 url: '/home',
-                templateUrl: '/App/Home/home.html',
+                templateUrl: '/app/home/home.html',
                 controller: 'homeCtrl',
                 controllerAs: 'vm',   
                 reloadOnSearch: false

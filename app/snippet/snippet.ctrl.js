@@ -64,7 +64,7 @@
             'StoryId':$scope.story.Id
         }
 
-        snippetService.createSnippet(snippet).success(function (data, status, headers, config) {
+        snippetService.createSnippetForSubmission($scope.submission.Id,snippet).success(function (data, status, headers, config) {
             console.log("Snippet Saved");
              $scope.snippets = [];
             $scope.snippetContent = '';

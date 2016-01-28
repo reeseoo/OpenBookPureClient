@@ -10,6 +10,7 @@ function SnippetService($http, APIURL) {
         getSnippetsForSubmissionPeriod:getSnippetsForSubmissionPeriod,
         deleteSnippet:deleteSnippet,
         createSnippet:createSnippet,
+        createSnippetForSubmission:createSnippetForSubmission
     }
     
     function getApiUrl(){
@@ -35,6 +36,11 @@ function SnippetService($http, APIURL) {
     function createSnippet(snippet)
     {
         return $http.post(getApiUrl(),snippet);
+    }
+    
+    function createSnippetForSubmission(submissionId,snippet)
+    {
+        return $http.post(APIURL+'submissionPeriod/'+submissionId+'/snippet',snippet);
     }
     
     function deleteSnippet(id) 
