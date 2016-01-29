@@ -1,10 +1,13 @@
-﻿angular.module('OpenBook').controller("snippetCtrl", function ($scope, $http,auth,store,snippetService,storyService,submissionPeriodService) {
+﻿angular.module('OpenBook').controller("snippetCtrl", function ($scope, $http,auth,store,snippetService,storyService,submissionPeriodService, voteService) {
     /* Define Scope */
     $scope.snippetMaxLength = 500;
     $scope.snippetMinLength = 8;
     $scope.getSnippets = getSnippets;
     $scope.showDiv = showDiv;
     $scope.submit = submit;
+    $scope.upVote = upVote;
+    $scope.downVote = downVote;
+    
     
     /* Init */
     getSnippets();
@@ -55,6 +58,21 @@
     });
     }
     
+    function upVote(snippet){
+        voteService.upVote(snippet.Id).success(function(data){
+            snippet.Score = data;
+        }).error(function(err){
+            
+        });
+    };
+    
+    function downVote(snippet){
+        voteService.downVote(snippet.Id).success(function(data){
+            snippet.Score = data;
+        }).error(function(err){
+            
+        });
+    };
 
     function submit() {
         var snippet = {

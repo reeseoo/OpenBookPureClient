@@ -33,6 +33,9 @@ textarea {
 .openbook-sidebar-toolbar{
     text-align: center;
 }
+span.score{
+    text-align: center;
+}
 .openbook-sidebar-toolbar img{
     width:128px;
 }
