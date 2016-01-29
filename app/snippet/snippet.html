@@ -13,14 +13,14 @@
         <!-- this is gonna be the bit where you vote on snippets -->
         <div id="snippets" layout="row" style="overflow:auto;">
             <md-card class="md-whiteframe-z2" flex="50" ng-repeat="snippet in subittedSnippets | orderBy:'-Score'" >
-                <md-card-content layout="row">
+                <md-card-content class="submission-content" layout="row">
                     <p flex>{{snippet.Content}}</p>
                     <p layout="column"> 
-                        <md-button flex class="md-fab md-mini md-primary" ng-click="upVote(snippet)">
+                        <md-button class="md-fab md-mini md-primary" ng-click="upVote(snippet)">
                             <md-icon md-svg-src="/img/icons/ic_arrow_drop_up_white_24px.svg" ></md-icon>
                         </md-button>
                         <span class="score">{{snippet.Score}}</span>
-                        <md-button flex class="md-fab md-mini"  ng-click="downVote(snippet)">
+                        <md-button class="md-fab md-mini"  ng-click="downVote(snippet)">
                             <md-icon md-svg-src="/img/icons/ic_arrow_drop_down_white_24px.svg" ></md-icon>
                         </md-button>
                     </p>

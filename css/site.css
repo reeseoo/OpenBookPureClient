@@ -36,6 +36,12 @@ textarea {
 span.score{
     text-align: center;
 }
+.submission-content{
+    max-height: 180px;
+}
+.submission-content p{
+    overflow-y: scroll;
+}
 .openbook-sidebar-toolbar img{
     width:128px;
 }
